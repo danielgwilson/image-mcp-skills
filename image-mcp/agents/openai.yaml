@@ -1,0 +1,7 @@
+interface:
+  display_name: "Image MCP"
+  short_description: "Use the image-mcp CLI for Image MCP image generation and editing workflows."
+  default_prompt: "Use Image MCP for this image workflow."
+
+policy:
+  allow_implicit_invocation: true
