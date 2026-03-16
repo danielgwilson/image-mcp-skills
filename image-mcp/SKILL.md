@@ -7,6 +7,8 @@ description: Use when the user explicitly wants to generate, edit, upload, or in
 
 Use the `image-mcp` CLI for Image MCP workflows.
 
+If `image-mcp` is not installed globally, use `npx --yes @image-mcp/cli ...` instead. If `npx` fails because of local npm cache permissions, retry with `NPM_CONFIG_CACHE="$(mktemp -d)" npx --yes @image-mcp/cli ...`.
+
 ## Use this skill when
 
 - the user wants to create an image with Image MCP
@@ -23,15 +25,16 @@ Use the `image-mcp` CLI for Image MCP workflows.
 
 ## Workflow
 
-1. Run `image-mcp doctor` or `image-mcp whoami` if auth state is unclear.
-2. If auth is missing or stale, run `image-mcp login` and then `image-mcp whoami`.
-3. Use `image-mcp models --json` when you need current model capability info.
-4. Prefer `--json` when another agent step will consume the result.
-5. Use `image-mcp create "<prompt>"` for generation tasks. It waits by default; use `--async` when you want a job id immediately.
-6. Use `image-mcp edit <image-ref> "<prompt>"` for edits. Local file paths are uploaded automatically before the edit job is created.
-7. Use `image-mcp job list` to recover long or interrupted runs and `image-mcp job get <job-id>` to inspect a specific job.
-8. Use `image-mcp job wait <job-id> --json` when you need explicit polling instead of the default wait behavior.
-9. Use `image-mcp job cancel <job-id>` when a queued or running job should be stopped.
+1. If `image-mcp` is on `PATH`, use it directly. Otherwise use `npx --yes @image-mcp/cli ...` or install it globally with `npm install -g @image-mcp/cli`.
+2. Run `image-mcp doctor` or `image-mcp whoami` if auth state is unclear.
+3. If auth is missing or stale, run `image-mcp login` and then `image-mcp whoami`.
+4. Use `image-mcp models --json` when you need current model capability info.
+5. Prefer `--json` when another agent step will consume the result.
+6. Use `image-mcp create "<prompt>"` for generation tasks. It waits by default; use `--async` when you want a job id immediately.
+7. Use `image-mcp edit <image-ref> "<prompt>"` for edits. Local file paths are uploaded automatically before the edit job is created.
+8. Use `image-mcp job list` to recover long or interrupted runs and `image-mcp job get <job-id>` to inspect a specific job.
+9. Use `image-mcp job wait <job-id> --json` when you need explicit polling instead of the default wait behavior.
+10. Use `image-mcp job cancel <job-id>` when a queued or running job should be stopped.
 
 ## References
 

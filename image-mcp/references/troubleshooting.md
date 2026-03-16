@@ -1,5 +1,10 @@
 # Troubleshooting
 
+If `image-mcp` is not found:
+
+1. Install it globally with `npm install -g @image-mcp/cli`
+2. Or run commands with `npx --yes @image-mcp/cli ...`
+
 If auth fails:
 
 1. Run `image-mcp doctor`
@@ -7,6 +12,12 @@ If auth fails:
 3. Run `image-mcp whoami`
 4. Check whether `IMAGE_MCP_API_KEY` is set and overriding local auth
 5. Check the local auth file under `~/.config/image-mcp/auth.json`
+
+If `npx` fails with npm cache permission errors:
+
+1. Retry with a temp cache:
+   `NPM_CONFIG_CACHE="$(mktemp -d)" npx --yes @image-mcp/cli whoami`
+2. If that works, fix ownership under `~/.npm` later so one-off runs do not fail
 
 If model lookup fails:
 
