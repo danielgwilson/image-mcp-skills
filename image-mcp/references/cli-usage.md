@@ -4,8 +4,15 @@ Use `--json` when another tool or agent step needs structured output.
 
 Commands below assume `image-mcp` is already on `PATH`.
 
+Fastest happy path:
+
+- `image-mcp login`
+- `image-mcp whoami`
+- `image-mcp create "<prompt>"`
+
 If it is not installed globally yet, use:
 
+- `npx --yes @image-mcp/cli login`
 - `npx --yes @image-mcp/cli whoami`
 - `npx --yes @image-mcp/cli create "<prompt>"`
 - `npx --yes @image-mcp/cli edit <image-ref> "<prompt>"`
@@ -26,6 +33,8 @@ Current commands:
 - `image-mcp doctor`
 - `image-mcp logout`
 - `image-mcp skill install`
+- `image-mcp help create`
+- `image-mcp help job wait`
 
 Useful behavior notes:
 

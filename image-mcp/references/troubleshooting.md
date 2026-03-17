@@ -10,8 +10,9 @@ If auth fails:
 1. Run `image-mcp doctor`
 2. Run `image-mcp login`
 3. Run `image-mcp whoami`
-4. Check whether `IMAGE_MCP_API_KEY` is set and overriding local auth
-5. Check the local auth file under `~/.config/image-mcp/auth.json`
+4. If `image-mcp` is not installed globally, retry with `npx --yes @image-mcp/cli login`
+5. Check whether `IMAGE_MCP_API_KEY` is set and overriding local auth
+6. Check the local auth file under `~/.config/image-mcp/auth.json`
 
 If `npx` fails with npm cache permission errors:
 

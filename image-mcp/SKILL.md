@@ -36,6 +36,13 @@ If `image-mcp` is not installed globally, use `npx --yes @image-mcp/cli ...` ins
 9. Use `image-mcp job wait <job-id> --json` when you need explicit polling instead of the default wait behavior.
 10. Use `image-mcp job cancel <job-id>` when a queued or running job should be stopped.
 
+## Fast path
+
+- `image-mcp login`
+- `image-mcp whoami`
+- `image-mcp create "<prompt>"`
+- `npx --yes @image-mcp/cli login`
+
 ## References
 
 - For command usage patterns, see [references/cli-usage.md](references/cli-usage.md)
